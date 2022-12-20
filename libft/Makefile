@@ -25,6 +25,7 @@ SRCS = ft_isalpha.c \
 	ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
+	ft_memmove.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
 	ft_toupper.c \
@@ -58,23 +59,23 @@ BONUS =	ft_lstnew.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
 	ft_lstmap.c
+NAME = libft.a
 
-libft.a : ${OBJS}
-	ar -rcs libft.a ${OBJS}
+${NAME} : ${OBJS}
+	ar -rcs ${NAME} ${OBJS}
 
-all : libft.a
+all : ${NAME}
+
+bonus : ${BONUS_OBJS}
+	ar -rcs ${NAME} ${BONUS_OBJS}
 
 .c.o :
 	${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.c=.o}
 
 clean :
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean : clean
-	${RM} libft.a
+	${RM} ${NAME}
 
 re : fclean all
-
-bonus :
-	${OBJS} ${BONUS_OBJS}
-		ar -rcs libft.a ${OBJS} ${BONUS_OBJS}

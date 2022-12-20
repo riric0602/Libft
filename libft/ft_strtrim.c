@@ -6,7 +6,7 @@
 /*   By: rchbouki <rchbouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:41:46 by rchbouki          #+#    #+#             */
-/*   Updated: 2022/11/22 17:12:45 by rchbouki         ###   ########.fr       */
+/*   Updated: 2022/12/02 13:12:13 by rchbouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +42,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!set || !s1)
 		return (NULL);
-	if (!*s1)
-		return ("");
+	new = NULL;
+	if (!*set && *s1)
+		return (ft_strdup((char *)s1));
 	start = ft_start(s1, set);
 	end = ft_end(s1, set);
-	new = malloc(end - start + 1);
-	if (end == 0 && start == (int)ft_strlen(s1))
+	if (!*s1 || (end == 0 && start == (int)ft_strlen(s1)))
 	{
+		new = malloc(sizeof(char) * 1);
+		if (!new)
+			return (NULL);
 		ft_strlcpy(new, "", 1);
 		return (new);
-		// return ("");
 	}
 	if (start == -1 || end == -1)
 		return ((char *)s1);
-	new = ft_substr(s1, start, end - start);
-	return (new);
+	return (ft_substr(s1, start, end - start));
 }
-/*
-int	main(void)
-{
-	printf("a%sa\n", ft_strtrim("    ", " "));
-}*/

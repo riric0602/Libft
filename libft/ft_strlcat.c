@@ -6,7 +6,7 @@
 /*   By: rchbouki <rchbouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:26:10 by rchbouki          #+#    #+#             */
-/*   Updated: 2022/11/22 15:11:14 by rchbouki         ###   ########.fr       */
+/*   Updated: 2022/12/15 19:01:29 by rchbouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (len + ft_strlen(src));
 }
+
+
+

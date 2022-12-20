@@ -6,7 +6,7 @@
 /*   By: rchbouki <rchbouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 12:25:59 by rchbouki          #+#    #+#             */
-/*   Updated: 2022/11/16 11:31:23 by rchbouki         ###   ########.fr       */
+/*   Updated: 2022/11/19 14:52:47 by rchbouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,3 @@ int	ft_isdigit(int c)
 		return (0);
 	return (1);
 }
-/*
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-
-int main(int argc, char *argv[])
-{
-	int test = atoi(argv[1]);
-	printf("%d\n", ft_isdigit(test));
-	printf("%d\n", isdigit(test));
-	return (argc);
-}*/

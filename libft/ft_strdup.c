@@ -6,7 +6,7 @@
 /*   By: rchbouki <rchbouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:40:23 by rchbouki          #+#    #+#             */
-/*   Updated: 2022/11/19 17:00:23 by rchbouki         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:56:45 by rchbouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(char *src)
 	len = 0;
 	while (src[len])
 		len++;
-	str = malloc(len + 1);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	p = str;

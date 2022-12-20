@@ -6,7 +6,7 @@
 /*   By: rchbouki <rchbouki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:28:16 by rchbouki          #+#    #+#             */
-/*   Updated: 2022/11/22 15:18:10 by rchbouki         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:59:20 by rchbouki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@ static int	ft_size(int n)
 	if (n == 0)
 		return (1);
 	if (n < 0)
+	{
 		len += 1;
-	while (n % 10 != 0)
+		n *= -1;
+	}
+	while (n / 10 != 0)
 	{
 		len++;
 		n /= 10;
 	}
+	len++;
 	return (len);
 }
 
@@ -65,7 +69,7 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	minus = 1;
-	str = malloc(ft_size(n) + 1);
+	str = malloc(sizeof(char) * (ft_size(n) + 1));
 	if (!str)
 		return (NULL);
 	if (n == 0 || n == (-2147483648))
@@ -85,21 +89,3 @@ char	*ft_itoa(int n)
 	str[i] = '\0';
 	return (ft_revstr(str, i));
 }
-
-/* void	ft_print_result(char const *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-int	main(void)
-{
-	// printf("%s\n", ft_itoa(5430000));
-	char *res = ft_itoa(-10);
-	ft_print_result(res);
-	free(res);
-} */
